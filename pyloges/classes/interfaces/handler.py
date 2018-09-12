@@ -22,7 +22,7 @@ from abc import ABC, abstractmethod
 class Handler(ABC):
 
     @abstractmethod
-    def print_log(self, msg: str, level: int):
+    def print_log(self, msg: str):
         pass
 
     @abstractmethod
