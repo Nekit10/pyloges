@@ -16,6 +16,15 @@
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
 
+from abc import ABC, abstractmethod
 
-class Handler:
-    pass
+
+class Handler(ABC):
+
+    @abstractmethod
+    def print_log(self, msg: str, level: int):
+        pass
+
+    @abstractmethod
+    def save(self):
+        pass
