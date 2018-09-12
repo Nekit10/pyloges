@@ -20,4 +20,8 @@ from pyloges.classes.interfaces.handler import Handler
 
 
 class StdHandler(Handler):
-    pass
+    def print_log(self, msg: str):
+        print(msg)
+
+    def save(self):
+        pass
