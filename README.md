@@ -62,7 +62,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Prologes.  If not, see <https://www.gnu.org/licenses/>.
 
-IMPORTANT NOTE: according to GNU GPL, you must licence your project to GNU GPL v3 if you use our library
+**IMPORTANT NOTE: according to GNU GPL, you must licence your project to GNU GPL v3 if you use our library**
 ## Authors and copyright
 Copyright (C) 2018 NIkita S., All Rights Reserved<br>
 *For any questions contact <nikitaserba@icloud.com><br>*
