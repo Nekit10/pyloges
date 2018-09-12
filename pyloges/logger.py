@@ -15,20 +15,3 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
-
-from pyloges.classes.interfaces.handler import Handler
-
-
-class FileHandler(Handler):
-    filename = ""
-    log = ""
-
-    def __init__(self, filename: str):
-        self.filename = filename
-
-    def print_log(self, msg: str):
-        self.log += msg + "\n"
-
-    def save(self):
-        f = open(self.filename, "w")
-        f.write(self.log)
