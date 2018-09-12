@@ -20,4 +20,6 @@ from pyloges.classes.interfaces.handler import Handler
 
 
 class FileHandler(Handler):
-    pass
+
+    def __init__(self, filename: str):
+        pass
