@@ -40,3 +40,6 @@ class Config:
 
     def add_handler(self, handler:Handler):
             self._log_handlers += [handler]
+
+    def get_handlers(self):
+        return self._log_handlers
