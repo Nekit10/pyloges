@@ -1,7 +1,7 @@
 # Pyloges
 The powerfull logging library for Python 3.
 ## Getting started
-When app will be released, just install it with pip:
+Just install it with pip:
 ```
 pip install pyloges
 ```
