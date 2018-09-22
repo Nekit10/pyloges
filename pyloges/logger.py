@@ -18,6 +18,58 @@
 
 import datetime
 
+from pyloges.classes.config import Config
+from pyloges.loglevels import NAMES, TRACE, DEBUG, INFO, WARNING, ERROR, FATAL
+
+
+class Logger:
+
+    config: Config = None
+
+    def __init__(self, config: Config):
+        self.config = config
+
+    def log(self, msg: str, log_level: int):
+        for handler in self.config.get_handlers():
+            handler.print_log(_process_msg(self.config.log_message_format, NAMES[log_level], msg))
+            handler.save()
+
+    def trace(self, msg: str):
+        self.log(msg, TRACE)
+
+    def t(self, msg: str):
+        self.trace(msg)
+
+    def debug(self, msg: str):
+        self.log(msg, DEBUG)
+
+    def d(self, msg: str):
+        self.debug(msg)
+
+    def info(self, msg: str):
+        self.log(msg, INFO)
+
+    def i(self, msg: str):
+        self.info(msg)
+
+    def warn(self, msg: str):
+        self.log(msg, WARNING)
+
+    def w(self, msg: str):
+        self.warn(msg)
+
+    def error(self, msg: str):
+        self.log(msg, ERROR)
+
+    def e(self, msg: str):
+        self.error(msg)
+
+    def fatal(self, msg: str):
+        self.log(msg, FATAL)
+
+    def f(self, msg: str):
+        self.fatal(msg)
+
 
 def _process_msg(format_: str, log_level: str, msg: str) -> str:
     tt = datetime.date.today().timetuple()
