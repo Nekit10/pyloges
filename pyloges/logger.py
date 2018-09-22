@@ -78,13 +78,13 @@ def _process_msg(format_: str, log_level: str, msg: str) -> str:
     tt = datetime.date.today().timetuple()
 
     new_str = format_
-    new_str.replace("{level}", log_level)
-    new_str.replace("%y", tt.tm_year)
-    new_str.replace("%M", tt.tm_mon)
-    new_str.replace("%d", tt.tm_mday)
-    new_str.replace("%h", tt.tm_hour)
-    new_str.replace("%M", tt.tm_min)
-    new_str.replace("%s", tt.tm_sec)
-    new_str.replace("{msg}", msg)
+    new_str = new_str.replace("{level}", log_level)
+    new_str = new_str.replace("%y", str(tt.tm_year))
+    new_str = new_str.replace("%M", str(tt.tm_mon))
+    new_str = new_str.replace("%d", str(tt.tm_mday))
+    new_str = new_str.replace("%h", str(tt.tm_hour))
+    new_str = new_str.replace("%M", str(tt.tm_min))
+    new_str = new_str.replace("%s", str(tt.tm_sec))
+    new_str = new_str.replace("{msg}", msg)
 
     return new_str
