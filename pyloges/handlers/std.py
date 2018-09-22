@@ -16,12 +16,18 @@
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
 
+import sys
+
 from pyloges.classes.interfaces.handler import Handler
+from pyloges.loglevels import ERROR_NAME, FATAL_NAME
 
 
 class StdHandler(Handler):
     def print_log(self, msg: str):
-        print(msg)
+        if ERROR_NAME in msg or FATAL_NAME in msg:
+            sys.stderr.write(msg)
+        else:
+            print(msg)
 
     def save(self):
         pass
