@@ -27,7 +27,7 @@ class Config:
     exit_on_fatal = False
     _log_handlers = []
 
-    def __init__(self, log_level: int, log_message_format: str, print_to_std: bool, exit_on_fatal: bool):
+    def __init__(self, log_level=1, log_message_format="[{level}]{%y-%M-%d %h:%m:%s} - {msg}", print_to_std=True, exit_on_fatal=False):
         self.log_level = log_level
         self.log_message_format = log_message_format
         self.exit_on_fatal = exit_on_fatal
