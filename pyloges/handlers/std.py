@@ -19,12 +19,12 @@
 import sys
 
 from pyloges.classes.interfaces.handler import Handler
-from pyloges.loglevels import ERROR_NAME, FATAL_NAME
+from pyloges.loglevels import NAMES, ERROR, FATAL
 
 
 class StdHandler(Handler):
     def print_log(self, msg: str):
-        if ERROR_NAME in msg or FATAL_NAME in msg:
+        if NAMES[ERROR] in msg or NAMES[FATAL] in msg:
             sys.stderr.write(msg)
         else:
             print(msg)

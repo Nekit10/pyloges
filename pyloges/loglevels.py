@@ -23,9 +23,9 @@ WARNING = 3
 ERROR = 4
 FATAL = 5
 
-TRACE_NAME = "TRACE"
-DEBUG_NAME = "DEBUG"
-INFO_NAME = "INFO"
-WARNING_NAME = "WARN"
-ERROR_NAME = "ERROR"
-FATAL_NAME = "FATAL"
+NAMES = ["TRACE",
+         "DEBUG",
+         "INFO",
+         "WARN",
+         "ERROR",
+         "FATAL"]
