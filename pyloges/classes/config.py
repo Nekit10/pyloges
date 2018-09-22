@@ -38,7 +38,7 @@ class Config:
     def add_writing_to_file(self, filename: str):
         self.add_handler(FileHandler(filename))
 
-    def add_handler(self, handler:Handler):
+    def add_handler(self, handler: Handler):
             self._log_handlers += [handler]
 
     def get_handlers(self):
