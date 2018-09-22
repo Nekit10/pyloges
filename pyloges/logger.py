@@ -30,9 +30,10 @@ class Logger:
         self.config = config
 
     def log(self, msg: str, log_level: int):
-        for handler in self.config.get_handlers():
-            handler.print_log(_process_msg(self.config.log_message_format, NAMES[log_level], msg))
-            handler.save()
+        if log_level >= self.config.log_level:
+            for handler in self.config.get_handlers():
+                handler.print_log(_process_msg(self.config.log_message_format, NAMES[log_level], msg))
+                handler.save()
 
     def trace(self, msg: str):
         self.log(msg, TRACE)
