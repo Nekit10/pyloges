@@ -67,6 +67,8 @@ class Logger:
 
     def fatal(self, msg: str):
         self.log(msg, FATAL)
+        if self.config.exit_on_fatal:
+            exit(1)
 
     def f(self, msg: str):
         self.fatal(msg)
