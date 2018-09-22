@@ -19,10 +19,10 @@
 import datetime
 
 
-def _process_msg(format: str, log_level: str, msg: str) -> str:
+def _process_msg(format_: str, log_level: str, msg: str) -> str:
     tt = datetime.date.today().timetuple()
 
-    new_str = format
+    new_str = format_
     new_str.replace("{level}", log_level)
     new_str.replace("%y", tt.tm_year)
     new_str.replace("%M", tt.tm_mon)
