@@ -6,14 +6,13 @@ When app will be released, just install it with pip:
 pip install pyloges
 ```
 ## Features
-None (:
-## Planned features
 * Logging (1.0)
 * Log levels (TRACE/INFO/WARNING/ERROR/FATAL) (1.0)
 * Logging to file/stdout/stderr (1.0)
 * Custom log format (1.0)
 * Exiting on fatal error (1.0)
 * Timestamps (1.0)
+## Planned features
 * Log format examples (1.1)
 * Configuration files (1.1)
 * File size limits (1.2)
@@ -25,6 +24,32 @@ None (:
 * Print log to syslog/WinEventLog/Network server/FTP server (2.0)
 * Add your own log handlers (2.0)
 * Load config file from network (2.0)
+## Code example
+```python
+from pyloges.logger import Logger
+from pyloges.classes.config import Config
+from pyloges import loglevels
+
+if __name__ == "__main__":
+    logger = Logger(Config())  # Default config
+    logger.t("TRACE 1")  # Logger don't print trace with default config
+    logger.i("Hello!")
+    logger.f("Error!")
+    logger.config.log_level = loglevels.TRACE
+    logger.config.exit_on_fatal = True
+    logger.t("Trace now works!")
+    logger.e("Small error")
+    logger.f("Fatal error")  # Program will terminate here
+    logger.i("Noooo!!!!")
+```
+Example output:
+```
+[INFO]{2018-9-23 0:9:33} - Hello!
+[FATAL]{2018-9-23 0:9:33} - Error!
+[TRACE]{2018-9-23 0:9:33} - Trace now works!
+[ERROR]{2018-9-23 0:9:33} - Small error
+[FATAL]{2018-9-23 0:9:33} - Fatal error
+```
 ## Contribution
 You can freely contribute to our github. There're many things you can do: fix bugs, add new features, make translations. Please follow several simple rules:
 * Create one issue per one bug
