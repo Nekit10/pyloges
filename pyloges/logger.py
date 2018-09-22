@@ -75,7 +75,7 @@ class Logger:
 
 
 def _process_msg(format_: str, log_level: str, msg: str) -> str:
-    tt = datetime.date.today().timetuple()
+    tt = datetime.datetime.now().timetuple()
 
     new_str = format_
     new_str = new_str.replace("{level}", log_level)
@@ -83,7 +83,7 @@ def _process_msg(format_: str, log_level: str, msg: str) -> str:
     new_str = new_str.replace("%M", str(tt.tm_mon))
     new_str = new_str.replace("%d", str(tt.tm_mday))
     new_str = new_str.replace("%h", str(tt.tm_hour))
-    new_str = new_str.replace("%M", str(tt.tm_min))
+    new_str = new_str.replace("%m", str(tt.tm_min))
     new_str = new_str.replace("%s", str(tt.tm_sec))
     new_str = new_str.replace("{msg}", msg)
 
