@@ -6,8 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Saving logs to file ([KoniDevTeam/SiteMonster: Issue #4](https://github.com/KoniDevTeam/SiteMonster/issues/4))
-- Removed old windows support
+- Log message blanks
 
 ## [1.0.0] - 2018-09-22
 ### Added
