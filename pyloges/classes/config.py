@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
 
+import json
+
 from pyloges.classes.interfaces.handler import Handler
 from pyloges.handlers.std import StdHandler
 from pyloges.handlers.file import FileHandler
@@ -34,6 +36,12 @@ class Config:
 
         if print_to_std:
             self.add_handler(StdHandler())
+
+    @classmethod
+    def get_instance_from_file(cls, filename: str):
+        file = open(filename, 'r')
+        conf = json.loads(file.read())
+        return Config(**conf)
 
     def add_writing_to_file(self, filename: str):
         self.add_handler(FileHandler(filename))

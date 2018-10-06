@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Log message blanks
+- Loading config from file
 
 ## [1.0.0] - 2018-09-22
 ### Added
