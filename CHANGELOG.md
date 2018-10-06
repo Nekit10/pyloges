@@ -14,4 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Log levels
 - Exit on fatal error
 
-[Unreleased]: https://github.com/KoniDevTeam/SiteMonster/compare/master...develop
+[Unreleased]: https://github.com/Nekit10/pyloges/compare/master...develop
