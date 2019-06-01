@@ -41,16 +41,27 @@ class AsyncLogger(Logger):
         self.queue.put({"msg": msg, "level": log_level,
                         "level_config": self.config.log_level if log_level_config == -1 else log_level_config})
 
+    def wait(self):
+        self.queue.join()
+        self.thread.stop()
+
 
 class AsyncLoggerThread(Thread):
+
+    is_stopping = False
 
     def __init__(self, queue: Queue, log_class: AsyncLogger):
         Thread.__init__(self)
         self.queue = queue
         self.log_class = log_class
 
+    def stop(self):
+        self.is_stopping = True
+
     def run(self) -> None:
         while True:
+            if self.is_stopping:
+                break
             log = self.queue.get()
             self.log_class.log_async(log["msg"], log["level"], log["level_config"])
             self.queue.task_done()
