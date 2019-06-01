@@ -1,10 +1,11 @@
 # Pyloges
 The powerfull logging library for Python 3.
 ## Getting started
-When app will be released, just install it with pip:
+Just install it with pip:
 ```
 pip install pyloges
 ```
+And visit our [wiki](https://github.com/Nekit10/pyloges/wiki)
 ## Features
 * Logging (1.0)
 * Log levels (TRACE/INFO/WARNING/ERROR/FATAL) (1.0)
@@ -92,7 +93,8 @@ along with Prologes.  If not, see <https://www.gnu.org/licenses/>.
 Copyright (C) 2018 NIkita S., All Rights Reserved<br>
 *For any questions contact <nikitaserba@icloud.com><br>*
 ## Links
-[Download library](https://github.com/Nekit10/pyloges/releases)<br>
+[Download library source](https://github.com/Nekit10/pyloges/releases)<br>
+[Documentation](https://github.com/Nekit10/pyloges/wiki)<br>
 [License](https://github.com/Nekit10/pyloges/blob/master/LICENSE)<br>
 [Bug reporter](https://github.com/Nekit10/pyloges/issues)<br>
 [Latest source](https://github.com/Nekit10/pyloges/tree/develop)<br>
