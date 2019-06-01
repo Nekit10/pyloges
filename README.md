@@ -13,9 +13,10 @@ And visit our [wiki](https://github.com/Nekit10/pyloges/wiki)
 * Custom log format (1.0)
 * Exiting on fatal error (1.0)
 * Timestamps (1.0)
-## Planned features
 * Log format examples (1.1)
 * Configuration files (1.1)
+* Async logging in beta testing (1.1)
+## Planned features
 * File size limits (1.2)
 * Mobile platforms (1.2)
 * Saving options (1.2)
