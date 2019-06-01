@@ -27,7 +27,7 @@ class FileHandler(Handler):
     log = ""
 
     def __init__(self, filename: str):
-        self.filename = self._process_filename(filename)
+        self.filename = _process_filename(filename)
 
     def print_log(self, msg: str):
         self.log += msg + "\n"
