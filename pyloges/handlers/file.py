@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
 
+import datetime
+
 from pyloges.classes.interfaces.handler import Handler
 
 
@@ -24,7 +26,7 @@ class FileHandler(Handler):
     log = ""
 
     def __init__(self, filename: str):
-        self.filename = filename
+        self.filename = self._process_filename(filename)
 
     def print_log(self, msg: str):
         self.log += msg + "\n"
@@ -32,3 +34,16 @@ class FileHandler(Handler):
     def save(self):
         f = open(self.filename, "w")
         f.write(self.log)
+
+    def _process_filename(self, filename: str) -> str:
+        tt = datetime.datetime.now().timetuple()
+
+        new_str = filename
+        new_str = new_str.replace("%y", str(tt.tm_year))
+        new_str = new_str.replace("%M", str(tt.tm_mon))
+        new_str = new_str.replace("%d", str(tt.tm_mday))
+        new_str = new_str.replace("%h", str(tt.tm_hour))
+        new_str = new_str.replace("%m", str(tt.tm_min))
+        new_str = new_str.replace("%s", str(tt.tm_sec))
+
+        return new_str
