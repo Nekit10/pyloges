@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pyloges',
-    version='1.0.1',
+    version='1.1',
     packages=['pyloges', 'pyloges/classes', 'pyloges/classes/interfaces', 'pyloges/handlers'],
     url='https://github.com/Nekit10/pyloges/',
     license='GNU GPL v3',
