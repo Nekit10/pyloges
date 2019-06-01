@@ -9,22 +9,17 @@
 # (at your option) any later version.
 #
 # Pyloges is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# but WITHOUT ANY WARRANTY without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
 
-import sys
+DATE = "%d.%M.%y.log"
+TIME = "%h-%m-%s.log"
+DATE_TIME = "%d.%M.%y %h-%m-%s.log"
+LATEST = "latest.log"
 
-from pyloges.classes.interfaces.handler import Handler
-
-
-class StdHandler(Handler):
-    """Handler that prints logs to stderr"""
-    def print_log(self, msg: str):
-        sys.stderr.write(msg + '\n')
-
-    def save(self):
-        pass
+USA_DATE = "%M.%d.%y.log"
+USA_DATE_TIME = "%M.%d.%y %h-%m-%s.log"

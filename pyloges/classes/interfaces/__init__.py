@@ -15,16 +15,3 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
-
-import sys
-
-from pyloges.classes.interfaces.handler import Handler
-
-
-class StdHandler(Handler):
-    """Handler that prints logs to stderr"""
-    def print_log(self, msg: str):
-        sys.stderr.write(msg + '\n')
-
-    def save(self):
-        pass

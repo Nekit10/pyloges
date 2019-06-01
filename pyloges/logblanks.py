@@ -9,22 +9,23 @@
 # (at your option) any later version.
 #
 # Pyloges is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# but WITHOUT ANY WARRANTY without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with Pyloges.  If not, see <https://www.gnu.org/licenses/>.
 
-import sys
+LEVEL_DATE_TIME = "[{level}] {%d-%M-%y %h:%m:%s} - {msg}"
+LEVEL_DATE = "[{level}] {%d-%M-%y} - {msg}"
+LEVEL_TIME = "[{level}] {%h:%m:%s} - {msg}"
+LEVEL = "[{level}] - {msg}"
+DATE = "{%d-%M-%y} - {msg}"
+TIME = "{%h:%m:%s} - {msg}"
+DATE_TIME = "{%d-%M-%y %h:%m:%s} - {msg}"
+MESSAGE = "{msg}"
 
-from pyloges.classes.interfaces.handler import Handler
-
-
-class StdHandler(Handler):
-    """Handler that prints logs to stderr"""
-    def print_log(self, msg: str):
-        sys.stderr.write(msg + '\n')
-
-    def save(self):
-        pass
+USA_LEVEL_DATE_TIME = "[{level}] {%M-%d-%y %h:%m:%s} - {msg}"
+USA_LEVEL_DATE = "[{level}] {%M-%d-%y} - {msg}"
+USA_DATE = "{%M-%d-%y} - {msg}"
+USA_DATE_TIME = "{%M-%d-%y %h:%m:%s} - {msg}"

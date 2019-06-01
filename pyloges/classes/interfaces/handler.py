@@ -20,11 +20,18 @@ from abc import ABC, abstractmethod
 
 
 class Handler(ABC):
+    """
+    Base class for handlers.
+
+    Handler is a class, that process new logs
+    """
 
     @abstractmethod
     def print_log(self, msg: str):
+        """Logger pass message of log here"""
         pass
 
     @abstractmethod
     def save(self):
+        """This method saves logs (e.g. to drive)"""
         pass
