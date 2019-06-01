@@ -81,11 +81,11 @@ def _process_msg(format_: str, log_level: str, msg: str) -> str:
     new_str = format_
     new_str = new_str.replace("{level}", log_level)
     new_str = new_str.replace("%y", str(tt.tm_year))
-    new_str = new_str.replace("%M", str(tt.tm_mon))
-    new_str = new_str.replace("%d", str(tt.tm_mday))
+    new_str = new_str.replace("%M", str(tt.tm_mon) if tt.tm_mon >= 10 else "0" + str(tt.tm_mon))
+    new_str = new_str.replace("%d", str(tt.tm_mday) if tt.tm_mday >= 10 else "0" + str(tt.tm_mday))
     new_str = new_str.replace("%h", str(tt.tm_hour))
-    new_str = new_str.replace("%m", str(tt.tm_min))
-    new_str = new_str.replace("%s", str(tt.tm_sec))
+    new_str = new_str.replace("%m", str(tt.tm_min) if tt.tm_min >= 10 else "0" + str(tt.tm_min))
+    new_str = new_str.replace("%s", str(tt.tm_sec) if tt.tm_sec >= 10 else "0" + str(tt.tm_sec))
     new_str = new_str.replace("{msg}", msg)
 
     return new_str
