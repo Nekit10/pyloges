@@ -22,6 +22,7 @@ from pyloges.classes.interfaces.handler import Handler
 
 
 class StdHandler(Handler):
+    """Handler that prints logs to stderr"""
     def print_log(self, msg: str):
         sys.stderr.write(msg + '\n')
 

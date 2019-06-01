@@ -22,6 +22,7 @@ from pyloges.classes.interfaces.handler import Handler
 
 
 class FileHandler(Handler):
+    """Handler that saves logs to file"""
     filename = ""
     log = ""
 

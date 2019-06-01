@@ -24,6 +24,7 @@ from pyloges.logger import Logger
 
 
 class AsyncLogger(Logger):
+    """Logger that saves logs in another thread"""
 
     def __init__(self, config: Config):
         super().__init__(config)
@@ -32,13 +33,13 @@ class AsyncLogger(Logger):
         self.thread.start()
 
     def log_async(self, msg: str, log_level: int, log_level_config: int):
+        """Thread will call this method to save log"""
         super().log(msg, log_level, log_level_config)
 
     def log(self, msg: str, log_level: int, log_level_config=-1):
-        self.queue.put({"msg": msg, "level": log_level, "level_config": self.config.log_level if log_level_config == -1 else log_level_config})
-
-    def wait(self):
-        self.queue.join()
+        """Passes log to thread"""
+        self.queue.put({"msg": msg, "level": log_level,
+                        "level_config": self.config.log_level if log_level_config == -1 else log_level_config})
 
 
 class AsyncLoggerThread(Thread):

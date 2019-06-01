@@ -23,14 +23,15 @@ from pyloges.loglevels import NAMES, TRACE, DEBUG, INFO, WARNING, ERROR, FATAL
 
 
 class Logger:
-
+    """Main class, sends logs to handlers"""
     config: Config = None
 
     def __init__(self, config: Config):
         self.config = config
 
     def log(self, msg: str, log_level: int, log_level_config=-1):
-        if (log_level_config != -1 and log_level >= log_level_config) or (log_level_config == -1 and log_level >= self.config.log_level):
+        if (log_level_config != -1 and log_level >= log_level_config) or (
+                log_level_config == -1 and log_level >= self.config.log_level):
             for handler in self.config.get_handlers():
                 handler.print_log(_process_msg(self.config.log_message_format, NAMES[log_level], msg))
                 handler.save()
